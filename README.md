@@ -43,18 +43,17 @@ sh run_step1.sh
 2. run LMTAG pipline (/ysm-gpfs/pi/zhao/mc2792/lmtag/code)
 
 Format: sh pipeline.sh trait region data output. example: 
+
 ```
 sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ysm-gpfs/pi/zhao/mc2792/lmtag/example/data /ysm-gpfs/pi/zhao/mc2792/lmtag/output2
 ```
 
+## Step 3: Post GWAS analysis
+
+
+## Simulations
 
 
 
-**This is bold text**
-*This text is italicized*
-This site was built using [GitHub Pages](https://pages.github.com/).
-- [x] Finish my changes
-- [ ] Push my commits to GitHub
-100. First list item
-     - First nested list item
-       - Second nested list item
+
+
