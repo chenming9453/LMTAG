@@ -34,11 +34,15 @@ sh run_step1.sh
 
 4. Organize the output format to the input of LMTAG using /ysm-gpfs/pi/zhao/mc2792/supergnova/supergnova_cmd/move.sh
 
-5. FDR control on significant regions using ```ipf_allregion.R```
+5. The local genetic correlations estimated from SUPERGNOVA are located in ```/ysm-gpfs/pi/zhao/mc2792/lmtag/IPF_LMTAG/IPF-IND-Fingerlin_LC-All/Local/chr1.txt```
+
+6. FDR control on significant regions using ```ipf_allregion.R```
 
 ## Step 2: Run LMTAG
 
 1. create region file(from ipf_allregion.R). create folder to storge the output of SUPERGNOVA on selected traits 
+
+2. create the folder that contains all phenotype-pairs results from SUPERGNOVA
 
 2. run LMTAG pipline (/ysm-gpfs/pi/zhao/mc2792/lmtag/code)
 
@@ -47,6 +51,16 @@ Format: sh pipeline.sh trait region data output. example:
 ```
 sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ysm-gpfs/pi/zhao/mc2792/lmtag/example/data /ysm-gpfs/pi/zhao/mc2792/lmtag/output2
 ```
+
+3. pipeline.sh will generate the output folders and commends through main.R, then run step1.1R, step1.2R and step2.R step by step.
+
+```/ysm-gpfs/pi/zhao/mc2792/lmtag/code/lmtag.sh``` contains the commends for execute the main LMTAG function in batch.
+
+- lmtag.R: no filtes
+- lmtag_remove.R: simply remove SNPs if W is invertible
+- lmtag_ginv_noadap.R: used the same cutoff for all regions
+- lmtag_ginv.R: adaptively select cutoff for different regions
+
 
 ## Step 3: Post GWAS analysis
 
