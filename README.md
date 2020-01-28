@@ -6,6 +6,20 @@ Default traits:
 
 "BC","LC-Adeno","LC-All","LC-Squam","PC","Asthma","Crohn","Eczema","IBD","PBC","TC","RA","SLE","UC","AD" ,"ADHD"  ,"ADs","AN" ,"ASD","BD","CP","CUD","DrnkWk","TG","epilepsy","Insomnia" ,"MDD","NSM","OCD","T2D","SA","SCZ","SD","SmkInit","TS","2HG","BMI","CAD","CKD","FG_adj","FI_adj","FP" ,"HBA1C" ,"HDL","Height","HOMA-B","HOMA-IR"  ,"HR" ,"IS" ,"LDL"  
 
+Folders with SUPERGNOVA results:
+
+```/ysm-gpfs/pi/zhao/yz738/SUPERGNOVA/Results```
+
+```/home/mc2792/scratch60/supergnova2```
+
+```/home/mc2792/scratch60/supergnova```
+
+```/ysm-gpfs/pi/zhao/mc2792/supergnova/```
+
+```/ysm-gpfs/pi/zhao-data/mc2792/supergnova```
+
+```/home/mc2792/scratch60/supergnova```
+
 The format of input trait GWAS sumstats should meet the requirements of munge function in LDSC!
 
 1. Run SUPERGNOVA between above traits and primary trait. Commend for running SUPERGNOVA:
