@@ -1,3 +1,17 @@
+1. UTMOST commend:
+
+mkdir sample_data/results_GTEx
+UTMOST_path = /home/mc2792/UTMOST/
+python2 joint_GBJ_test.py \
+--weight_db $UTMOST_path/sample_data/weight_db_GTEx/ \
+--output_dir $UTMOST_path/sample_data/results_GTEx/ \
+--cov_dir $UTMOST_path/sample_data/covariance_joint/ \
+--input_folder $UTMOST_path/sample_data/results/ \
+--gene_info $UTMOST_path/intermediate/gene_info.txt \
+--output_name ipf_4_joint \
+--start_gene_index 1 \
+--end_gene_index 17290
+
 # LMTAG pipeline: GWAS leveraging local genetic correlation
 
 ## Step1: Run SUPERGNOVA
