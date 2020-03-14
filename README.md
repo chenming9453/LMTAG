@@ -86,10 +86,11 @@ sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ys
 
 ```/ysm-gpfs/pi/zhao/mc2792/lmtag/code/lmtag.sh``` contains the commends for execute the main LMTAG function in batch.
 
-- lmtag.R: no filtes
+- lmtag.R: no filtering
 - lmtag_remove.R: simply remove SNPs if W is invertible
 - lmtag_ginv_noadap.R: used the same cutoff for all regions
 - lmtag_ginv.R: adaptively select cutoff for different regions
+- lmtag_ginv_noadap_snp.R：filtering on SNPs
 
 
 ## Step 3: Post GWAS analysis
