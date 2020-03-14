@@ -95,8 +95,6 @@ sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ys
 ## Step 3: Post GWAS analysis
 
 
-## Simulations
-
 
 
 
