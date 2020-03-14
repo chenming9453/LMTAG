@@ -1,7 +1,9 @@
 1. UTMOST commend:
 
 mkdir sample_data/results_GTEx
+
 UTMOST_path = /home/mc2792/UTMOST/
+
 python2 joint_GBJ_test.py \
 --weight_db $UTMOST_path/sample_data/weight_db_GTEx/ \
 --output_dir $UTMOST_path/sample_data/results_GTEx/ \
