@@ -95,7 +95,24 @@ sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ys
 
 ## Step 3: Post GWAS analysis
 
+### Partitioned heritability
 
+code path: ```/ysm-gpfs/pi/zhao/yz738/Annot_MTAG/EnrichMent/code```
+IMPACT annotation path: ```/ysm-gpfs/pi/zhao/yz738/software/IMPACT/IMPACT707/Annotations``` (impact707_prs_St.xlsx)
+
+1. generate annotation:  ```gen_annot.R```
+
+- Conditioned on baseline annotations(all annotations before genoskyline)
+- IMPACT Annotation 1-707; only use EUR_; value from 0 to 1
+- Create annotations for baseline annotations + each annotation of MAFK ( create one folder for each MAFK annotation)
+
+2. ldsc: ```cal_ldsc.sh```
+
+- use the annotation generated from the previous step to calculate the ld score. make sure the output of ldsc is in the same folder of the annotation
+
+3. partitioned heritability: ```ph.sh```
+
+- weight and eur_chr1_snp/maf5 files: use yiliang's path
 
 
 
