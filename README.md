@@ -1,4 +1,4 @@
-1. UTMOST commend:
+# UTMOST commend:
 
 mkdir sample_data/results_GTEx
 
@@ -98,6 +98,7 @@ sh pipeline.sh IPF /ysm-gpfs/pi/zhao/mc2792/lmtag/example/ipf_region_sig.txt /ys
 ### Partitioned heritability
 
 code path: ```/ysm-gpfs/pi/zhao/yz738/Annot_MTAG/EnrichMent/code```
+
 IMPACT annotation path: ```/ysm-gpfs/pi/zhao/yz738/software/IMPACT/IMPACT707/Annotations``` (impact707_prs_St.xlsx)
 
 1. generate annotation:  ```gen_annot.R```
