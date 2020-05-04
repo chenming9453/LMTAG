@@ -106,11 +106,11 @@ IMPACT annotation path: ```/ysm-gpfs/pi/zhao/yz738/software/IMPACT/IMPACT707/Ann
 - Conditioned on baseline annotations(all annotations before genoskyline)
 - IMPACT Annotation 1-707; only use EUR_; value from 0 to 1 ```IMPACT707_EUR_chr1.annot.gz```
 - Create annotations for baseline annotations + each annotation of MAFK ( create one folder for each MAFK annotation)
-- generated annotation: google drive and  ```/home/mc2792/scratch60/ph/annotation```
 
 2. ldsc: ```cal_ldsc.sh```
 
 - use the annotation generated from the previous step to calculate the ld score. make sure the output of ldsc is in the same folder of the annotation
+- generated annotation: google drive and  ```/home/mc2792/scratch60/ph/annotation```
 
 3. partitioned heritability: ```ph.sh```
 
