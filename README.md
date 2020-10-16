@@ -1,12 +1,16 @@
 # SUPERGNOVA commend:
 
-```python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10```
+```
+python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10
+```
 
 ## SUPERGNOVA  steps:
 
 1)	Used munge to curate sumstats
 
-```python2 /ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --merge-alleles /ysm-gpfs/pi/zhao/mc2792/ph/w_hm3.snplist --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt```
+```
+python2 /ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --merge-alleles /ysm-gpfs/pi/zhao/mc2792/ph/w_hm3.snplist --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt
+```
 
 SNP: A unique identifier (e.g., the rs number)
 
@@ -51,6 +55,7 @@ for(i in 1:nrow(trait)){
 }
 write.table(cmd,file = "/ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/COPDgene_NHW_supergnova_batch.txt",quote=F,row.names=F,col.names=F)
 ```
+
 
 
 # UTMOST commend:
