@@ -24,7 +24,7 @@ Generate SUPERGNOVA commend in batch:
 t1 = "COPD"
 t1_file = "/home/mc2792/data/COPD_COPDgene_NHW_Caco_Curated.sumstats.gz"
 N1 = 5346
-trait = fread("location.txt") # type	index phenotype	n	curated	original
+trait = fread("location.txt") # type index phenotype n curated original
 cmd = ()
 for(i in 1:nrow(trait)){
   temp1 = paste0("python3 supergnova.py /home/mc2792/data/",t1_file," ",trait$curated[i])
