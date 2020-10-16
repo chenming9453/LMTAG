@@ -25,7 +25,7 @@ t1 = "COPD"
 t1_file = "/home/mc2792/data/COPD_COPDgene_NHW_Caco_Curated.sumstats.gz"
 N1 = 5346
 trait = fread("location.txt") # type index phenotype n curated original
-cmd = ()
+cmd = c()
 for(i in 1:nrow(trait)){
   temp1 = paste0("python3 supergnova.py /home/mc2792/data/",t1_file," ",trait$curated[i])
   temp2 = paste0(" --N1 ",N1," --N2 ",trait$n[i]," --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out ")
