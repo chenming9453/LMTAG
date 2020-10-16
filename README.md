@@ -1,4 +1,10 @@
-# munge commend:
+# SUPERGNOVA commend:
+
+```python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10```
+
+SUPERGNOVA  steps:
+
+1)	Used munge to curate sumstats
 
 ```python2 /ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --merge-alleles /ysm-gpfs/pi/zhao/mc2792/ph/w_hm3.snplist --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt```
 
@@ -14,34 +20,37 @@ P: A P-value
 
 BETA/Z: A signed summary statistic (beta, OR, log odds, Z-score, etc)
 
-# SUPERGNOVA commend:
+2)	Remove NA rows in sumstats
 
-```python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10```
+```
+#t: type index phenotype n curated original
+library(R.utils)
+for(i in 1:nrow(t)){
+  data = fread(t$curated[i])  
+  data = na.omit(data)
+  outfile = paste0("/ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/data/sumstats/processed/",t$index[i],".sumstats.gz")
+  fwrite(data,outfile,sep='\t')
+}
+```
 
-Generate SUPERGNOVA commend in batch:
+3)	Generate cmd in batch 
 
 ```
 t1 = "COPD"
-t1_file = "/home/mc2792/data/COPD_COPDgene_NHW_Caco_Curated.sumstats.gz"
+t1_file = "/ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/data/sumstats/processed/COPD.sumstats.gz"
 N1 = 5346
-trait = fread("location.txt") # type index phenotype n curated original
+trait = read.table("/ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/cmd/copdgene_nhw.txt",header=T) # type index phenotype n curated original
+outfolder = "COPDgene_NHW/"
+
 cmd = c()
 for(i in 1:nrow(trait)){
-  temp1 = paste0("python3 supergnova.py /home/mc2792/data/",t1_file," ",trait$curated[i])
-  temp2 = paste0(" --N1 ",N1," --N2 ",trait$n[i]," --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out ")
-  tmep3 = paste0(t1,"_",trait$index[i],".txt --thread 10")
+  temp1 = paste0("python3 supergnova.py ",t1_file," ",trait$curated[i])
+  temp2 = paste0(" --N1 ",N1," --N2 ",trait$n[i]," --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out /ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/",outfolder)
+  temp3 = paste0(t1,"_",trait$index[i],".txt --thread 10")
   cmd = c(cmd,paste0(temp1,temp2,temp3))
 }
-write.table(cmd,file = "supergnova_batch.txt",quote=F,row.names=F,col.names=F)
+write.table(cmd,file = "/ysm-gpfs/pi/zhao/mc2792/SUPERGNOVA/COPDgene_NHW_supergnova_batch.txt",quote=F,row.names=F,col.names=F)
 ```
-
-SUPERGNOVA  steps:
-
-1)	Used munge to curate sumstats
-
-2)	Remove NA rows in sumstats
-
-3)	Generate cmd using munge_traits_cmd.R
 
 
 # UTMOST commend:
