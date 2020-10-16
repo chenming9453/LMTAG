@@ -1,6 +1,6 @@
 # munge commend:
 
-```/ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt```
+```python2 /ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt```
 
 rsid: A unique identifier (e.g., the rs number)
 
