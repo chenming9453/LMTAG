@@ -18,6 +18,24 @@ BETA/Z: A signed summary statistic (beta, OR, log odds, Z-score, etc)
 
 ```python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10```
 
+Generate SUPERGNOVA commend in batch:
+
+```
+t1 = "COPD"
+t1_file = "/home/mc2792/data/COPD_COPDgene_NHW_Caco_Curated.sumstats.gz"
+N1 = 5346
+trait = fread("location.txt") # type	index phenotype	n	curated	original
+cmd = ()
+for(i in 1:nrow(trait)){
+  temp1 = paste0("python3 supergnova.py /home/mc2792/data/",t1_file," ",trait$curated[i])
+  temp2 = paste0(" --N1 ",N1," --N2 ",trait$n[i]," --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out ")
+  tmep3 = paste0(t1,"_",trait$index[i],".txt --thread 10")
+  cmd = c(cmd,paste0(temp1,temp2,temp3))
+}
+write.table(cmd,file = "supergnova_batch.txt",quote=F,row.names=F,col.names=F)
+```
+
+
 
 # UTMOST commend:
 
