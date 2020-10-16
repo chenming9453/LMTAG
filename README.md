@@ -35,6 +35,13 @@ for(i in 1:nrow(trait)){
 write.table(cmd,file = "supergnova_batch.txt",quote=F,row.names=F,col.names=F)
 ```
 
+SUPERGNOVA  steps:
+
+1)	Used munge to curate sumstats
+
+2)	Remove NA rows in sumstats
+
+3)	Generate cmd using munge_traits_cmd.R
 
 
 # UTMOST commend:
