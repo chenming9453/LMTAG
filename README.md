@@ -2,17 +2,17 @@
 
 ```python2 /ysm-gpfs/pi/zhao/mc2792/ph/ldsc/munge_sumstats.py --N 17115 --merge-alleles /ysm-gpfs/pi/zhao/mc2792/ph/w_hm3.snplist --out /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA --sumstats /ysm-gpfs/pi/zhao/mc2792/ph/mtag_ph/IPF_CREA_updated_trait_1.txt```
 
-rsid: A unique identifier (e.g., the rs number)
+SNP: A unique identifier (e.g., the rs number)
 
-a1: Allele 1 (effect allele)
+A1: Allele 1 (effect allele)
 
-a2: Allele 2 (non-effect allele)
+A2: Allele 2 (non-effect allele)
 
-n: Sample size (which often varies from SNP to SNP)
+N: Sample size (which often varies from SNP to SNP)
 
-p: A P-value
+P: A P-value
 
-beta/z: A signed summary statistic (beta, OR, log odds, Z-score, etc)
+BETA/Z: A signed summary statistic (beta, OR, log odds, Z-score, etc)
 
 
 
