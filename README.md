@@ -14,6 +14,9 @@ P: A P-value
 
 BETA/Z: A signed summary statistic (beta, OR, log odds, Z-score, etc)
 
+#SUPERGNOVA commend:
+
+```python3 supergnova.py /home/mc2792/data/IPF_Allen.sumstats.gz /home/mc2792/data/LC_UKBB_C34.sumstats.gz --N1 11259 --N2 361194 --bfile data/bfiles/eur_chr@_SNPmaf5 --partition data/partition/eur_chr@.bed --out IPF_LC-UKBB.txt --thread 10```
 
 
 # UTMOST commend:
